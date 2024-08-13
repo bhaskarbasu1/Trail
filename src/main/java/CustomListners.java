@@ -65,7 +65,7 @@ public class CustomListners implements ITestListener {
     }
 
     void takeScreenshot() throws IOException {
-        TakesScreenshot takesScreenshot = (TakesScreenshot) Listner.GalvinusWebsite.mDriver;
+        TakesScreenshot takesScreenshot = (TakesScreenshot) GalvinusWebsite.mDriver;
         File src = takesScreenshot.getScreenshotAs(OutputType.FILE);
         File dest = new File("src/main/java/screenshot/ss.png");
 

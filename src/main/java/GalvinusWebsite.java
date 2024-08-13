@@ -1,3 +1,4 @@
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -8,11 +9,10 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
-@Listeners(Listner.CustomListners.class)
-public class GalvinusWebsite extends Listner.CustomListners {
+@Listeners(CustomListners.class)
+public class GalvinusWebsite extends CustomListners {
 
     public static WebDriver mDriver;
-
 
 
     @BeforeClass
@@ -21,7 +21,7 @@ public class GalvinusWebsite extends Listner.CustomListners {
         mDriver = new ChromeDriver();
         mDriver.get("https://galvinus.com/");
         mDriver.manage().window().maximize();
-        Listner.CustomListners customListners = new Listner.CustomListners(mDriver);
+        CustomListners customListners = new CustomListners(mDriver);
     }
 
     @Test(priority = 1)
@@ -49,8 +49,8 @@ public class GalvinusWebsite extends Listner.CustomListners {
 
         mDriver.findElement(By.id("form-field-name")).sendKeys("Bhaskar");
         mDriver.findElement(By.id("form-field-email")).sendKeys("basubhaskar14@gmail.com");
-         mDriver.findElement(By.xpath("//*[@id=\"form-field-field_\"]")).sendKeys("Galvinus");
-      //  mDriver.findElement(By.xpath("//*[@id=\"form-field-field_d72975f\"]")).sendKeys("Galvinus");
+        // mDriver.findElement(By.xpath("//*[@id=\"form-field-field_\"]")).sendKeys("Galvinus");
+        mDriver.findElement(By.xpath("//*[@id=\"form-field-field_d72975f\"]")).sendKeys("Galvinus");
     }
 
     @Test(priority = 5)

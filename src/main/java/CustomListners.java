@@ -1,5 +1,3 @@
-package Listner;
-
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
@@ -67,7 +65,7 @@ public class CustomListners implements ITestListener {
     }
 
     void takeScreenshot() throws IOException {
-        TakesScreenshot takesScreenshot = (TakesScreenshot) mDriver;
+        TakesScreenshot takesScreenshot = (TakesScreenshot) GalvinusWebsite.mDriver;
         File src = takesScreenshot.getScreenshotAs(OutputType.FILE);
         File dest = new File("src/main/java/screenshot/ss.png");
 
